@@ -9,6 +9,7 @@ import shap
 import pickle
 import streamlit.components.v1 as components
 import plotly.express as px
+from click import *
 
 with open('../model/score_objects2.pkl', 'rb') as handle:
     clf_xgb_w, explainer_xgb = pickle.load(handle)  
