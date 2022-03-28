@@ -14,7 +14,7 @@ with open('score_objects2.pkl', 'rb') as handle:
     clf_xgb_w, explainer_xgb = pickle.load(handle)  
 X_test=pd.read_csv('X_train_ech.csv',index_col='Unnamed: 0')
 z_1=pd.read_csv('z_1.csv',index_col='Unnamed: 0')
-z_0=pd.read_csv('/z_0.csv',index_col='Unnamed: 0')
+z_0=pd.read_csv('z_0.csv',index_col='Unnamed: 0')
 st.set_page_config(layout="wide")
 
 def run():
