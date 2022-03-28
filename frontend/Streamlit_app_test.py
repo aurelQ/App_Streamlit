@@ -21,17 +21,6 @@ z_0=pd.read_csv('../model/z_0.csv',index_col='Unnamed: 0')
 st.set_page_config(layout="wide")
 
 def run():
-    st.markdown(
-    """
-    <style>
-    .sidebar .sidebar-content {
-    background-image: linear-gradient(#2e7bcf,#2e7bcf);
-    color: white;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-    )
     st.header("Dashboard P7 - Bank Data Analysis !")
     test_id = st.sidebar.text_input("Id Client")
     column = st.selectbox("Colonne", ['NAME_CONTRACT_TYPE', 'CODE_GENDER', 'AMT_INCOME_TOTAL'])
@@ -54,7 +43,7 @@ def run():
     if st.sidebar.button("Predict"):
 
         #Récupération de la prédiction et du score
-        response = requests.post("https://p7-final.herokuapp.com/docs#/default/predict_predict_post", json=data)
+        response = requests.post("https://p7-final.herokuapp.com/predict", json=data)
         prediction=json.loads(response.text)
         st.success("Le score prédit par l'algorithme est : " +  str(prediction["score"]))
         st.success("La prédiction de l'algo est : " + str(prediction["prediction"]))
