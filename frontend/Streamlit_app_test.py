@@ -3,13 +3,11 @@ import streamlit as st
 import requests
 import json
 import joblib
-import uvicorn
 import numpy as np
 import pandas as pd
 import shap
 import pickle
 import streamlit.components.v1 as components
-import plotly.graph_objects as go
 import plotly.express as px
 
 with open('../model/score_objects2.pkl', 'rb') as handle:
